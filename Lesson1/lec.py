@@ -72,3 +72,22 @@ numbers = []
 for i in range(0, 16, 2):
     numbers.append(i)
 print(numbers)
+
+
+def CheckInput(ch=''):
+    abc = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    back = False
+    i = 0
+    while i < len(abc):
+        if abc[i] == ch.lower():
+            back = True
+            break
+        else:
+            i += 1
+    return back
+
+
+check = CheckInput('Б')
+print(check)
+check = CheckInput('A')
+print(check)
