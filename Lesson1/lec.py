@@ -88,6 +88,6 @@ def CheckInput(ch=''):
 
 
 check = CheckInput('Б')
-print(check)
-check = CheckInput('A')
-print(check)
+print(check)  # True
+check = CheckInput('F')
+print(check)  # False
