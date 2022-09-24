@@ -3,8 +3,6 @@ import sqlite3 as db
 from random import randint, shuffle
 from datetime import datetime, date, time
 
-connection = db.connect("data/scrum.db")
-cursor = connection.cursor()
 
 list_of_name_m = []
 list_of_name_w = []
@@ -46,6 +44,8 @@ def create_surname_w():
 
 
 def create_stuff():
+    connection = db.connect("data/scrum.db")
+    cursor = connection.cursor()
     global list_of_name_m
     global list_of_name_w
     global list_of_surname_m
