@@ -3,7 +3,7 @@ from random import randint, shuffle
 from datetime import datetime, date, time
 
 
-posts = ['scrum-master', 'разработчик', 'тесировщик', 'дизайнер', 'аналитик']
+posts = ['scrum-master', 'разработчик', 'тестировщик', 'дизайнер', 'аналитик']
 result = []
 
 
