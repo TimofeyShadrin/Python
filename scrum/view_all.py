@@ -4,12 +4,12 @@ connection = db.connect("data/scrum.db")
 cursor = connection.cursor()
 
 all = {'name': '',
-         'surname': '',
-         'date birth': '',
-         'main tel': '',
-         'e-mail': '',
-         'post': '',
-         'status': ''}
+       'surname': '',
+       'date birth': '',
+       'main tel': '',
+       'e-mail': '',
+       'post': '',
+       'status': ''}
 all_list = []
 
 
@@ -22,8 +22,8 @@ def view_one(surname: str):
                            "(contacts INNER JOIN "
                            "(status INNER JOIN post ON status_stuff_id = post_stuff_id) "
                            "ON contacts_stuff_id = status_stuff_id) "
-                           f"ON stuff_id = contacts_stuff_id WHERE stuff_surname = "
-                           f"'{surname.lower().title()}'").fetchall()
+                           f"ON stuff_id = contacts_stuff_id WHERE stuff_surname LIKE "
+                           f"'%{surname.lower().title()}%'").fetchall()
     for item in items:
         all_list.append(dict(zip(all, item)))
     for row in all_list:
@@ -40,7 +40,7 @@ def view_one(surname: str):
         print('')
 
 
-def view_all(surname = '*'):
+def view_all(surname='*'):
     if surname == '*':
         global all_list
         items = cursor.execute("SELECT "
