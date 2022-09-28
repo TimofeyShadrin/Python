@@ -1,5 +1,6 @@
 from scrum.find import find_worker as va
 from scrum.find import find_menu as fm
+from scrum import create_record as cr
 
 
 def repeat_find():
@@ -33,8 +34,7 @@ def menu():
         try:
             choice = int(input('Please enter the item number of main menu: '))
             if choice == 1:
-                pass
-                break
+                cr.create_record()
             elif choice == 2:
                 repeat_find()
                 fm.find_menu()

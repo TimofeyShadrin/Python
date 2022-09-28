@@ -17,6 +17,7 @@ def serial():
         else:
             stuff_id = fw.serial[0]
             break
+    fw.serial.clear()
     return stuff_id
 
 

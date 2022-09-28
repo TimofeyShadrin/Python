@@ -2,6 +2,7 @@ from scrum import read_contacts as rc
 from scrum import read_status as rs
 from scrum import read_post as rp
 from scrum import del_record as dr
+from scrum.find import find_worker as fw
 
 
 def find_menu():
@@ -26,6 +27,7 @@ def find_menu():
                 dr.del_record()
                 break
             elif answer == 5:
+                fw.serial.clear()
                 break
             else:
                 print('Your input is incorrect!')
