@@ -26,7 +26,7 @@ def repeat_find():
 
 def menu():
     while True:
-        print('Main menu:\n'
+        print('\nMain menu:\n'
               '1. Create record\n'
               '2. Find employee\n'
               '3. Exit\n')

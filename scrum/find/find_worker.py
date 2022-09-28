@@ -1,6 +1,7 @@
 import sqlite3 as db
 
 all_list = []
+serial = []
 
 
 def find_worker(phrase: str):
@@ -17,7 +18,7 @@ def find_worker(phrase: str):
 
     if phrase == '':
         items = cursor.execute("SELECT "
-                               "stuff_name, stuff_surname, stuff_date_birth, contacts_main_tel, "
+                               "stuff_id, stuff_name, stuff_surname, stuff_date_birth, contacts_main_tel, "
                                "contacts_mail, post_post, status_status FROM "
                                "stuff INNER JOIN "
                                "(contacts INNER JOIN "
@@ -26,7 +27,7 @@ def find_worker(phrase: str):
                                f"ON stuff_id = contacts_stuff_id").fetchall()
     else:
         items = cursor.execute("SELECT "
-                               "stuff_name, stuff_surname, stuff_date_birth, contacts_main_tel, "
+                               "stuff_id, stuff_name, stuff_surname, stuff_date_birth, contacts_main_tel, "
                                "contacts_mail, post_post, status_status FROM "
                                "stuff INNER JOIN "
                                "(contacts INNER JOIN "
@@ -39,7 +40,8 @@ def find_worker(phrase: str):
                                f"OR post_post LIKE '%{phrase}%' "
                                f"OR status_status LIKE '%{phrase}%'").fetchall()
     for item in items:
-        all_list.append(dict(zip(workers, item)))
+        all_list.append(dict(zip(workers, item[1::])))
+        serial.append(item[0])
     for row in all_list:
         count = 1
         print(all_list.index(row), end=': ')
