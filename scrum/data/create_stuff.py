@@ -50,13 +50,13 @@ def create_stuff():
     global list_of_name_w
     global list_of_surname_m
     global list_of_surname_w
-    contacts_id = [i for i in range(1, 21)]
+    contacts_id = [i for i in range(1, 41)]
     shuffle(contacts_id)
-    post_id = [i for i in range(1, 21)]
+    post_id = [i for i in range(1, 41)]
     shuffle(post_id)
-    status_id = [i for i in range(1, 21)]
+    status_id = [i for i in range(1, 41)]
     shuffle(status_id)
-    for i in range(1, 21):
+    for i in range(1, 41):
         dt = date(randint(1975, 1999), randint(1, 12), randint(1, 28))
         choose = randint(0, 1)
         if choose == 0:

@@ -1,13 +1,13 @@
-from scrum.find import find_worker as va
 from scrum.find import find_menu as fm
 from scrum import create_record as cr
+from scrum.find import find_worker as fw
 
 
 def repeat_find():
     while True:
         phrase = input('\nPlease enter phrase in data of employee: ')
-        va.find_worker(phrase)
-        if len(va.all_list) != 0:
+        fw.find_worker(phrase)
+        if len(fw.all_list) != 0:
             break
         else:
             print('The search yielded no results!\n\n'
@@ -38,7 +38,8 @@ def menu():
             elif choice == 2:
                 repeat_find()
                 fm.find_menu()
-                va.all_list.clear()
+                fw.all_list.clear()
+                fw.serial.clear()
             elif choice == 3:
                 break
             else:

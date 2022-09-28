@@ -15,7 +15,7 @@ stuff_list = []
 
 def read_stuff():
     global stuff_list
-    items = cursor.execute("SELECT stuff_name, stuff_surname, stuff_date_birth FROM stuff").fetchall()
+    items = cursor.execute("SELECT * FROM stuff").fetchall()
     for item in items:
         stuff_list.append(dict(zip(stuff, item)))
 

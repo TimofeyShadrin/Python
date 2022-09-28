@@ -48,8 +48,8 @@ def create_contacts():
     global mail
     global telegram
     global second_tel
-    temp = [[] for _ in range(20)]
-    for i in range(1, 21):
+    temp = [[] for _ in range(40)]
+    for i in range(1, 41):
         under = []
         main_tel = f'+7 ({randint(901, 999)}) ' \
                    + f'{randint(100, 999)}-' \
@@ -66,7 +66,7 @@ def create_contacts():
         index = int(rs.stuff_list[i - 1]['stuff_contacts_id']) - 1
         temp[index] = under
     print(temp)
-    for j in range(1, 21):
+    for j in range(1, 41):
         sql = f'''
                 INSERT INTO contacts
                     (contacts_id,
