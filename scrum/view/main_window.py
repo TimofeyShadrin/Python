@@ -1,5 +1,8 @@
 from tkinter import *
 from tkinter import ttk
+
+from sqlalchemy import event
+
 import find_window as fw
 
 root = Tk()  # создаем корневой объект - окно
@@ -19,14 +22,8 @@ find.bind('<ButtonPress-1>', fw.find_windows)
 create = ttk.Button(text="Create record")  # создаем кнопку из пакета ttk
 create.pack(fill=X)  # размещаем кнопку в окне
 
-
-
-def destroy(event):
-    root.destroy()
-
-
 close = ttk.Button(text="Exit")
 close.pack(fill=X)
-close.bind("<ButtonPress-1>", destroy)
+close.bind("<ButtonPress-1>", lambda x=event: root.destroy())
 
 root.mainloop()
