@@ -5,7 +5,7 @@ serial = []
 
 
 def find_worker(phrase: str):
-    connection = db.connect("data/scrum.db")
+    connection = db.connect("C:/Users/tshad/OneDrive/Documents/Python/scrum/data/scrum.db")
     cursor = connection.cursor()
     global all_list
     workers = {'name': '',
